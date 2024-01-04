@@ -1,0 +1,12 @@
+import cv2
+import numpy as np
+
+# Görüntünüzü yükleyin
+# image = cv2.imread('your_image_file.jpg', cv2.IMREAD_GRAYSCALE)
+
+# Gaussian filtre boyutunu belirleyin
+sigma = 1.0
+
+# Gaussian filtrelemeyi uygulayın
+from scipy.ndimage import gaussian_filter
+filtered_image = gaussian_filter(image, sigma)
