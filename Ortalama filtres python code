@@ -1,0 +1,14 @@
+import cv2
+import numpy as np
+
+# Görüntünüzü yükleyin
+# image = cv2.imread('your_image_file.jpg', cv2.IMREAD_GRAYSCALE)
+
+# Ortalama filtre boyutunu belirleyin
+kernel_size = 5
+
+# Ortalama filtre oluşturun
+kernel = np.ones((kernel_size, kernel_size), np.float32) / (kernel_size ** 2)
+
+# Ortalama filtrelemeyi uygulayın
+filtered_image = cv2.filter2D(image, -1, kernel)
