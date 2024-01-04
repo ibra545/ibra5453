@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+
+# Görüntünüzü yükleyin
+# image = cv2.imread('your_image_file.jpg')
+
+# RGB değerlerine göre bir eşik belirleyin
+lower = np.array([30, 30, 30])
+upper = np.array([255, 255, 255])
+
+# Belirtilen eşik değerlerine göre bir maske oluşturun
+mask = cv2.inRange(image, lower, upper)
+
+# Maskeyi görüntüye uygulayın
+segmented = cv2.bitwise_and(image, image, mask=mask)
