@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+
+
+void bitPlaneSlicing(int height, int width, unsigned char image[height][width]) {
+    
+    int bitPlane = 1;
+
+    
+    unsigned char outputImage[height][width];
+
+  
+    for(int i = 0; i < height; i++) {
+        for(int j = 0; j < width; j++) {
+            
+            outputImage[i][j] = (image[i][j] >> bitPlane) & 1;
+        }
+    }
+
+}
+
+int main() {
+    return 0;
+}
