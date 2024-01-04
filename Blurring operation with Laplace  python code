@@ -1,0 +1,12 @@
+import cv2
+import numpy as np
+
+# Load your image
+# image = cv2.imread('your_image_file.jpg', cv2.IMREAD_GRAYSCALE)
+
+# Apply Laplacian filter
+laplacian = cv2.Laplacian(image, cv2.CV_64F)
+
+# The Laplacian of an image highlights regions of rapid intensity change and is therefore often used for edge detection.
+# Convert back to 8bit.
+laplacian_8bit = np.uint8(np.absolute(laplacian))
