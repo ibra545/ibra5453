@@ -1,0 +1,24 @@
+import cv2
+import numpy as np
+
+# Load your image
+# image = cv2.imread('your_image_file.jpg', cv2.IMREAD_GRAYSCALE)
+
+# Define the kernel size for the smoothing operation
+kernel_size = 5
+
+# Create a kernel for smoothing
+kernel = np.ones((kernel_size, kernel_size), np.float32) / (kernel_size ** 2)
+
+# Apply the smoothing operation (also known as blurring)
+smoothed_image = cv2.filter2D(image, -1, kernel)
+from PIL import Image, ImageFilter
+
+# Open an image file
+# im = Image.open('low-contrast.jpg')
+
+# Create a sharpness enhancer
+enhancer = ImageEnhance.Sharpness(im)
+
+# Apply the enhancer with a sharpening factor of 2.0
+sharpened_im = enhancer.enhance(2.0)
