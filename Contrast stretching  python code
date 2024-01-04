@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+
+# Load your image
+# image = cv2.imread('your_image_file.jpg', cv2.IMREAD_GRAYSCALE)
+
+# Perform contrast stretching
+min_val = np.min(image)
+max_val = np.max(image)
+
+# Apply min-max contrast stretching
+contrast_stretched = (image - min_val) / (max_val - min_val) * 255
+
+# Convert the result to 'uint8' (optional)
+contrast_stretched = contrast_stretched.astype(np.uint8)
