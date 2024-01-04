@@ -1,0 +1,21 @@
+import numpy as np
+import cv2
+
+# Load your image
+# image = cv2.imread('your_image_file.jpg', cv2.IMREAD_GRAYSCALE)
+
+# Define the probability of the noise
+prob = 0.05
+
+# Create a copy of the image
+output = np.copy(image)
+
+# Apply salt noise
+num_salt = np.ceil(prob * image.size * 0.5)
+coords = [np.random.randint(0, i - 1, int(num_salt)) for i in image.shape]
+output[coords] = 255
+
+# Apply pepper noise
+num_pepper = np.ceil(prob * image.size * 0.5)
+coords = [np.random.randint(0, i - 1, int(num_pepper)) for i in image.shape]
+output[coords] = 0
