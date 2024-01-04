@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+double contraharmonic_mean(int n, double arr[]) {
+    double numerator = 0, denominator = 0;
+    for (int i = 0; i < n; i++) {
+        numerator += arr[i] * arr[i];
+        denominator += arr[i];
+    }
+    return numerator / denominator;
+}
+
+int main() {
+    double arr[] = {1.0, 2.0, 3.0, 4.0, 5.0};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    printf("Contraharmonic mean = %.2lf\n", contraharmonic_mean(n, arr));
+    return 0;
+}
